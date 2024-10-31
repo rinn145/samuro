@@ -1,0 +1,88 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* Стили для логотипа */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-right: 20px;
+}
+
+/* Стили для кнопки каталога */
+.catalog-button {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.catalog-button i {
+  margin-right: 5px;
+}
+
+/* Стили для поля поиска */
+.search-bar {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.search-bar i {
+  margin-left: 5px;
+  color: #555;
+}
+
+/* Стили для иконок */
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icons i {
+  margin: 0 10px;
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+}
+
+.nav-icons span {
+  font-size: 14px;
+  color: #555;
+  margin-left: 5px;
+}
+
+.logo-frame {
+  padding: 21px;
+  width: 1600px;
+  height: 363px;
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center;
+  
+}
+
+.samuro-frame {
+  text-align: center;
+}
