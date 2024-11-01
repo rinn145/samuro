@@ -1,25 +1,57 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // Импортируйте стили, если они у вас есть
+import './index.css'; 
 
 function App() {
-  // Пример данных
-  const products = [
-    { id: 1, name: "Bot telegram", price: "20$", category: "Category 1", description: "Описание товара" },
-    { id: 2, name: "Bot telegram", price: "20$", category: "Category 1", description: "Описание товара" },
-    { id: 3, name: "Bot telegram", price: "20$", category: "Category 1", description: "Описание товара" },
-    // Добавьте больше товаров по мере необходимости
+  const categories = [
+    {
+      id: 1,
+      name: "Category 1",
+      products: [
+        { id: 1, name: "Bot telegram", price: "20$", description: "Описание товара" },
+        { id: 2, name: "Bot telegram", price: "20$", description: "Описание товара" },
+        { id: 3, name: "Bot telegram", price: "20$", description: "Описание товара" },
+        { id: 4, name: "Bot telegram", price: "20$", description: "Описание товара" },
+        { id: 5, name: "Bot telegram", price: "20$", description: "Описание товара" },
+      ]
+    },
+    {
+      id: 2,
+      name: "Category 2",
+      products: [
+        { id: 6, name: "Website template", price: "30$", description: "Описание товара" },
+        { id: 7, name: "Website template", price: "30$", description: "Описание товара" },
+        { id: 8, name: "Website template", price: "30$", description: "Описание товара" },
+        { id: 9, name: "Website template", price: "30$", description: "Описание товара" },
+        { id: 10, name: "Website template", price: "30$", description: "Описание товара" },
+      ]
+    },
+    {
+      id: 3,
+      name: "Category 3",
+      products: [
+        { id: 11, name: "Mobile app", price: "50$", description: "Описание товара" },
+        { id: 12, name: "Mobile app", price: "50$", description: "Описание товара" },
+        { id: 13, name: "Mobile app", price: "50$", description: "Описание товара" },
+        { id: 14, name: "Mobile app", price: "50$", description: "Описание товара" },
+        { id: 15, name: "Mobile app", price: "50$", description: "Описание товара" },
+      ]
+    }
   ];
 
   return (
     <div className="App">
-      <h2>{products[0].category}</h2>
-      <div className="product-grid">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-      <a href="#" className="see-more">See more</a>
+      {categories.map((category) => (
+        <div key={category.id} className="category-section">
+          <h2>{category.name}</h2>
+          <div className="product-grid">
+            {category.products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+          <a href="#" className="see-more">See more</a>
+        </div>
+      ))}
     </div>
   );
 }
@@ -35,5 +67,5 @@ function ProductCard({ product }) {
   );
 }
 
-// Рендеринг компонента App в элемент с id="root"
+export default App;
 ReactDOM.render(<App />, document.getElementById('root'));
