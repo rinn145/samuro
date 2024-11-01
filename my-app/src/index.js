@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; 
+import './index.css';
+import './assets/fonts.css'; 
 
 function App() {
   const categories = [
@@ -38,9 +39,6 @@ function App() {
       ]
     }
   ];
-
-
-
 
 
   return (
