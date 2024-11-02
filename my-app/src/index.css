@@ -78,7 +78,7 @@ body {
 }
 
 .search-bar i {
-  margin-left: 5px;
+  margin-right: 17px;
   color: #555;
 }
 
@@ -213,8 +213,6 @@ body {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  max-width: 1600px;
-  margin: 0 auto;
 }
 
 .samuro-studio-content {
@@ -312,5 +310,4 @@ body {
   line-height: 23.04px;
   text-align: center;
   margin-bottom: 7px;
-
 }
