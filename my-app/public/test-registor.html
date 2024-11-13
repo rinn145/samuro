@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Form</title>
+    <style>
+        /* Общие стили */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            width: 400px;
+            padding: 30px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        /* Стили для заголовков Login и Registration */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .tabs div {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .tabs .active {
+            color: #e63c3c;
+            border-bottom: 2px solid #e63c3c;
+        }
+        
+        /* Основные стили формы */
+        .form-container h2 {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 1em;
+            color: #666;
+            background-color: #f9f9f9;
+            outline: none;
+        }
+        .form-group input::placeholder {
+            color: #bbb;
+        }
+        
+        /* Стили для забытого пароля */
+        .forgot-password {
+            font-size: 0.8em;
+            color: #e63c3c;
+            text-align: right;
+            display: block;
+            margin-top: 5px;
+            text-decoration: none;
+        }
+        
+        /* Кнопка входа */
+        .submit-button {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 0;
+            background-color: #e63c3c;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #c23636;
+        }
+        
+        /* Скрытие формы */
+        .form {
+            display: none;
+        }
+        .form.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <!-- Верхняя панель с вкладками Login и Registration -->
+    <div class="tabs">
+        <div id="loginTab" class="active" onclick="showForm('login')">LOGIN</div>
+        <div id="registrationTab" onclick="showForm('registration')">REGISTRATION</div>
+    </div>
+    
+    <!-- Форма входа -->
+    <div id="loginForm" class="form active">
+        <h2>Login with password and user name</h2>
+        <div class="form-group">
+            <input type="text" placeholder="User name or email">
+        </div>
+        <div class="form-group">
+            <input type="password" placeholder="Password">
+            <a href="#" class="forgot-password">Forgot your username or password?</a>
+        </div>
+        <button class="submit-button">Log-in</button>
+    </div>
+    
+    <!-- Форма регистрации -->
+    <div id="registrationForm" class="form">
+        <h2>Register with your details</h2>
+        <div class="form-group">
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input type="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="password" placeholder="Password">
+        </div>
+        <button class="submit-button">Register</button>
+    </div>
+</div>
+
+<script>
+    function showForm(formType) {
+        // Убираем активный класс у обеих форм и вкладок
+        document.getElementById('loginForm').classList.remove('active');
+        document.getElementById('registrationForm').classList.remove('active');
+        document.getElementById('loginTab').classList.remove('active');
+        document.getElementById('registrationTab').classList.remove('active');
+        
+        // Отображаем нужную форму и активируем вкладку
+        if (formType === 'login') {
+            document.getElementById('loginForm').classList.add('active');
+            document.getElementById('loginTab').classList.add('active');
+        } else {
+            document.getElementById('registrationForm').classList.add('active');
+            document.getElementById('registrationTab').classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
