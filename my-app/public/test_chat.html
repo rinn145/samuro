@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             padding: 20px;
             background-color: #f9f9f9;
         }
+
         /* Main container */
         .chat-container {
             display: flex;
@@ -23,6 +25,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
+
         /* Sidebar styling */
         .chat-sidebar {
             width: 200px;
@@ -30,17 +33,20 @@
             background-color: #f2f2f2;
             border-right: 1px solid #ddd;
         }
+
         .chat-sidebar h2 {
             margin: 0 0 20px;
             font-size: 1.2em;
             color: #333;
         }
+
         .chat-sidebar .contact {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
             cursor: pointer;
         }
+
         .contact .avatar {
             width: 40px;
             height: 40px;
@@ -54,13 +60,33 @@
             font-size: 1em;
             margin-right: 10px;
         }
+
+        .contact .avatar,
+        .chat-header .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #d9534f;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1em;
+            margin-right: 10px;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
         .contact .contact-info {
             color: #333;
             font-size: 0.9em;
         }
+
         .contact .contact-info .name {
             font-weight: bold;
         }
+
         /* Chat area styling */
         .chat-area {
             flex-grow: 1;
@@ -69,6 +95,7 @@
             padding: 20px;
             background-color: #fff;
         }
+
         .chat-header {
             display: flex;
             align-items: center;
@@ -76,6 +103,7 @@
             padding-bottom: 10px;
             margin-bottom: 10px;
         }
+
         .chat-header .avatar {
             width: 40px;
             height: 40px;
@@ -89,27 +117,33 @@
             font-size: 1em;
             margin-right: 10px;
         }
+
         .chat-header .name {
             font-weight: bold;
             font-size: 1.1em;
             color: #333;
         }
+
         /* Message list styling */
         .message-list {
             flex-grow: 1;
             overflow-y: auto;
             padding-right: 10px;
         }
+
         .message {
             display: flex;
             margin-bottom: 10px;
         }
+
         .message.user {
             justify-content: flex-start;
         }
+
         .message.agent {
             justify-content: flex-end;
         }
+
         .message .bubble {
             max-width: 60%;
             padding: 10px 15px;
@@ -117,14 +151,17 @@
             font-size: 0.9em;
             line-height: 1.4em;
         }
+
         .message.user .bubble {
             background-color: #f5e0e9;
             color: #333;
         }
+
         .message.agent .bubble {
             background-color: #f5e0e9;
             color: #333;
         }
+
         /* Input area styling */
         .message-input {
             display: flex;
@@ -132,7 +169,8 @@
             border-top: 1px solid #ddd;
             padding: 10px;
         }
-        .message-input input {
+
+        .message-input input[type="text"] {
             flex-grow: 1;
             padding: 10px;
             border: none;
@@ -141,9 +179,11 @@
             margin-right: 10px;
             font-size: 1em;
         }
+
         .message-input input:focus {
             outline: none;
         }
+
         .message-input button {
             background-color: #333;
             color: white;
@@ -153,97 +193,119 @@
             cursor: pointer;
             font-size: 1em;
         }
+
+        .message-input input[type="file"] {
+            display: none;
+        }
     </style>
 </head>
+
 <body>
 
-<div class="chat-container">
-    <!-- Sidebar with contacts -->
-    <div class="chat-sidebar">
-        <h2>Chat</h2>
-        <div class="contact" onclick="switchChat('IvanGenius')">
-            <div class="avatar">Iv</div>
-            <div class="contact-info">
-                <div class="name">IvanGenius</div>
-                <div>Thank you for your order...</div>
+    <div class="chat-container">
+        <!-- Sidebar with contacts -->
+        <div class="chat-sidebar">
+            <h2>Chat</h2>
+            <div class="contact" onclick="switchChat('IvanGenius')">
+                <div class="avatar">Iv</div>
+                <div class="contact-info">
+                    <div class="name">IvanGenius</div>
+                    <div>Thank you for your order...</div>
+                </div>
+            </div>
+            <div class="contact" onclick="switchChat('AnnaSupport')">
+                <div class="avatar">An</div>
+                <div class="contact-info">
+                    <div class="name">AnnaSupport</div>
+                    <div>Hello, how can I assist?</div>
+                </div>
             </div>
         </div>
-        <div class="contact" onclick="switchChat('AnnaSupport')">
-            <div class="avatar">An</div>
-            <div class="contact-info">
-                <div class="name">AnnaSupport</div>
-                <div>Hello, how can I assist?</div>
+
+        <!-- Chat area -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <div class="avatar">Iv</div>
+                <div class="name" id="chatName">IvanGenius</div>
+            </div>
+            <div class="message-list" id="messageList">
+                <!-- Messages will be inserted here dynamically -->
+            </div>
+            <div class="message-input">
+                <input type="text" id="messageInput" placeholder="Message">
+                <input type="file" id="fileInput" accept="image/*" onchange="sendFile(event)">
+                <button onclick="document.getElementById('fileInput').click()">📎</button>
+                <button onclick="sendMessage()">&#10148;</button>
             </div>
         </div>
-        <!-- Add more contacts if needed -->
     </div>
-    
-    <!-- Chat area -->
-    <div class="chat-area">
-        <div class="chat-header">
-            <div class="avatar">Iv</div>
-            <div class="name" id="chatName">IvanGenius</div>
-        </div>
-        <div class="message-list" id="messageList">
-            <!-- Messages will be inserted here dynamically -->
-        </div>
-        <div class="message-input">
-            <input type="text" id="messageInput" placeholder="Message">
-            <button onclick="sendMessage()">&#10148;</button>
-        </div>
-    </div>
-</div>
 
-<script>
-    // Example data for different chats
-    const chats = {
-        IvanGenius: [
-            { sender: 'user', text: 'Hello' },
-            { sender: 'agent', text: 'Hello' },
-        ],
-        AnnaSupport: [
-            { sender: 'user', text: 'Hi, I need help with my order' },
-            { sender: 'agent', text: 'Of course, what seems to be the problem?' },
-        ]
-    };
-    let currentChat = 'IvanGenius';
+    <script>
+        const chats = {
+            IvanGenius: [
+                { sender: 'user', text: 'Hello' },
+                { sender: 'agent', text: 'Hello' },
+            ],
+            AnnaSupport: [
+                { sender: 'user', text: 'Hi, I need help with my order' },
+                { sender: 'agent', text: 'Of course, what seems to be the problem?' },
+            ]
+        };
+        let currentChat = 'IvanGenius';
 
-    function switchChat(chatName) {
-        currentChat = chatName;
-        document.getElementById('chatName').innerText = chatName;
-        displayMessages();
-    }
-
-    function displayMessages() {
-        const messageList = document.getElementById('messageList');
-        messageList.innerHTML = ''; // Clear previous messages
-        chats[currentChat].forEach(message => {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message', message.sender);
-            const bubbleDiv = document.createElement('div');
-            bubbleDiv.classList.add('bubble');
-            bubbleDiv.innerText = message.text;
-            messageDiv.appendChild(bubbleDiv);
-            messageList.appendChild(messageDiv);
-        });
-    }
-
-    function sendMessage() {
-        const input = document.getElementById('messageInput');
-        const message = input.value.trim();
-        if (message) {
-            // Add the message to the chat data
-            chats[currentChat].push({ sender: 'user', text: message });
-            // Clear input
-            input.value = '';
-            // Display updated messages
+        function switchChat(chatName) {
+            currentChat = chatName;
+            document.getElementById('chatName').innerText = chatName;
             displayMessages();
         }
-    }
 
-    // Initial display of messages
-    displayMessages();
-</script>
+        function displayMessages() {
+            const messageList = document.getElementById('messageList');
+            messageList.innerHTML = '';
+            chats[currentChat].forEach(message => {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', message.sender);
+                const bubbleDiv = document.createElement('div');
+                bubbleDiv.classList.add('bubble');
+                if (message.file) {
+                    const img = document.createElement('img');
+                    img.src = message.file;
+                    img.style.maxWidth = '100%';
+                    img.style.borderRadius = '8px';
+                    bubbleDiv.appendChild(img);
+                } else {
+                    bubbleDiv.innerText = message.text;
+                }
+                messageDiv.appendChild(bubbleDiv);
+                messageList.appendChild(messageDiv);
+            });
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            if (message) {
+                chats[currentChat].push({ sender: 'user', text: message });
+                input.value = '';
+                displayMessages();
+            }
+        }
+
+        function sendFile(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    chats[currentChat].push({ sender: 'user', file: e.target.result });
+                    displayMessages();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        displayMessages();
+    </script>
 
 </body>
+
 </html>

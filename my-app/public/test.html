@@ -9,22 +9,66 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
         }
-        /* Container */
+        /* Button for catalog */
+        .catalog-button {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .catalog-button i {
+            margin-right: 5px;
+        }
+        
+        /* Overlay background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Filter container */
         .filter-container {
             width: 250px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-sizing: border-box;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: none; /* Initially hidden */
+            position: relative;
+            z-index: 10;
         }
-        /* Title styles */
+        
+        /* Close button for filter */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #333;
+        }
+        
+        /* General container styles */
         .filter-container h2 {
             font-size: 1.2em;
             margin: 0;
         }
-        /* Filter title with icon */
         .filter-title {
             display: flex;
             align-items: center;
@@ -33,16 +77,14 @@
             margin-bottom: 10px;
         }
         .filter-title::before {
-            content: "🔍"; /* Replace this with a filter icon if available */
+            content: "🔍";
             margin-right: 5px;
         }
-        /* List of categories */
         .category-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        /* Individual category items */
         .category-item {
             display: flex;
             justify-content: space-between;
@@ -53,7 +95,6 @@
         .category-item label {
             font-size: 0.9em;
         }
-        /* Checkbox styles */
         .category-item input[type="checkbox"] {
             width: 18px;
             height: 18px;
@@ -63,7 +104,18 @@
 </head>
 <body>
 
-<div class="filter-container">
+<!-- Catalog Button -->
+<div class="catalog-button" onclick="toggleFilter()">
+    <i class="fas fa-list"></i> 
+    <span>Catalog</span>
+</div>
+
+<!-- Overlay for filter (semi-transparent background) -->
+<div class="overlay" id="overlay" onclick="toggleFilter()"></div>
+
+<!-- Filter Container -->
+<div class="filter-container" id="filterContainer">
+    <div class="close-button" onclick="toggleFilter()">✖</div>
     <h2>Catalog</h2>
     <div class="filter-title">Filter products</div>
     <ul class="category-list">
@@ -72,31 +124,33 @@
             <input type="checkbox" checked>
         </li>
         <li class="category-item">
-            <label>Category 1</label>
-            <input type="checkbox" checked>
+            <label>Category 2</label>
+            <input type="checkbox">
         </li>
         <li class="category-item">
-            <label>Category 1</label>
-            <input type="checkbox" checked>
+            <label>Category 3</label>
+            <input type="checkbox">
         </li>
-        <li class="category-item">
-            <label>Category 1</label>
-            <input type="checkbox" checked>
-        </li>
-        <li class="category-item">
-            <label>Category 1</label>
-            <input type="checkbox" checked>
-        </li>
-        <li class="category-item">
-            <label>Category 1</label>
-            <input type="checkbox" checked>
-        </li>
-        <li class="category-item">
-            <label>Category 1</label>
-            <input type="checkbox" checked>
-        </li>
+        <!-- More categories as needed -->
     </ul>
 </div>
+
+<script>
+    // Function to toggle filter visibility
+    function toggleFilter() {
+        const filterContainer = document.getElementById('filterContainer');
+        const overlay = document.getElementById('overlay');
+        
+        const isVisible = filterContainer.style.display === 'block';
+        if (isVisible) {
+            filterContainer.style.display = 'none';
+            overlay.style.display = 'none';
+        } else {
+            filterContainer.style.display = 'block';
+            overlay.style.display = 'flex';
+        }
+    }
+</script>
 
 </body>
 </html>
