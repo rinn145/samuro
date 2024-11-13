@@ -148,7 +148,7 @@ div {
   cursor: pointer;
 }
 
-.product-card h3{
+.product-card h3 {
   margin: 0;
   font-family: 'Inria Sans';
   font-size: 24px;
@@ -156,13 +156,13 @@ div {
 }
 
 
-.product-card p{
+.product-card p {
   max-width: 245px;
   height: 71px;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  color:#8A8A8A;
+  color: #8A8A8A;
   font-size: 16px;
   line-height: 19.18px;
   margin-top: 2px;
@@ -178,9 +178,9 @@ div {
   height: 24px;
   cursor: pointer;
   background: none;
-	border: none;
-	padding: 0;
-	font: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
   display: block;
   text-align: right;
   color: #CF1919;
@@ -211,6 +211,7 @@ div {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  margin-top: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -311,41 +312,3 @@ div {
   margin-bottom: 7px;
 }
 
-/* Стили для модального окна */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  width: 80%;
-  max-width: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-.close-button {
-  background-color: #d9534f;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s;
-}
-
-.close-button:hover {
-  background-color: #c9302c;
-}

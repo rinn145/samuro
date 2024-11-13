@@ -20,7 +20,6 @@ function Navbar() {
         <div class="nav-icons">
             <i class="fas fa-user"><span>Account</span></i>
             <i class="fas fa-comments"><span>Chat</span></i>
-            <i class="fas fa-shopping-cart"><span>Shopping cart</span></i>
         </div>
      </section>
 
