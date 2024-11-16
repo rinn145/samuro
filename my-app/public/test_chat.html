@@ -13,17 +13,21 @@
             justify-content: center;
             padding: 20px;
             background-color: #f9f9f9;
+            margin: 0 auto;
+            max-width: 1600px;
         }
 
         /* Main container */
         .chat-container {
             display: flex;
+            /* width: 100%; */
             width: 100%;
-            max-width: 800px;
+            max-width: 1270px;
+            height: 720px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         /* Sidebar styling */
@@ -94,6 +98,7 @@
             flex-direction: column;
             padding: 20px;
             background-color: #fff;
+            justify-content: flex-end;
         }
 
         .chat-header {
@@ -101,7 +106,7 @@
             align-items: center;
             border-bottom: 1px solid #ddd;
             padding-bottom: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 170px;
         }
 
         .chat-header .avatar {
@@ -128,8 +133,12 @@
         .message-list {
             flex-grow: 1;
             overflow-y: auto;
+            /* Включаем вертикальную прокрутку */
+            max-height: 400px;
+            /* Максимальная высота области сообщений */
             padding-right: 10px;
         }
+
 
         .message {
             display: flex;
@@ -137,11 +146,11 @@
         }
 
         .message.user {
-            justify-content: flex-start;
+            justify-content: flex-end;
         }
 
         .message.agent {
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
 
         .message .bubble {
@@ -150,6 +159,14 @@
             border-radius: 15px;
             font-size: 0.9em;
             line-height: 1.4em;
+            word-wrap: break-word;
+            /* Перенос слов */
+            overflow-wrap: break-word;
+            /* Для совместимости */
+            max-height: 200px;
+            /* Ограничение высоты пузырька */
+            overflow-y: auto;
+            /* Включаем прокрутку, если текст слишком длинный */
         }
 
         .message.user .bubble {
@@ -232,7 +249,7 @@
                 <!-- Messages will be inserted here dynamically -->
             </div>
             <div class="message-input">
-                <input type="text" id="messageInput" placeholder="Message">
+                <input type="text" maxlength="100" id="messageInput" placeholder="Message">
                 <input type="file" id="fileInput" accept="image/*" onchange="sendFile(event)">
                 <button onclick="document.getElementById('fileInput').click()">📎</button>
                 <button onclick="sendMessage()">&#10148;</button>
@@ -303,7 +320,15 @@
             }
         }
 
+
+        document.getElementById('messageInput').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
         displayMessages();
+
     </script>
 
 </body>
