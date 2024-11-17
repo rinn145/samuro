@@ -1,10 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import './index.css';
 import './assets/fonts.css';
-// import { Link } from 'react-router-dom';
-import tgCard from './tgCard.svg'
-
+import tgCard from './tgCard.svg';
 
 function ProductCard() {
 
@@ -46,34 +44,36 @@ function ProductCard() {
 
 
 
-    return (
-        <div>
-          {categories.map((category) => (
-            <div key={category.id} className="category-section">
-              <h2>{category.name}</h2>
-              <div className="product-grid">
-                {category.products.map((product) => (
-                  <SingleProduct key={product.id} product={product} />
-                ))}
-              </div>
-              <a href="/catalog" className="see-more">See more</a>
-            </div>
-          ))}
+   
+  return (
+    <div>
+      {categories.map((category) => (
+        <div key={category.id} className="category-section">
+          <h2>{category.name}</h2>
+          <div className="product-grid">
+            {category.products.map((product) => (
+              <SingleProduct key={product.id} product={product} />
+            ))}
+          </div>
+          <Link to="/" className="see-more">See more</Link>
         </div>
-      );
-    }
-    
-    function SingleProduct({ product }) {
-      return (
-        <div className="product-card">
-          <img src={tgCard} alt={product.name} className="product-image" />
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          <div className="product-price">{product.price}</div>
-        </div>
-      );
-    }
-    
+      ))}
+    </div>
+  );
+}
+
+function SingleProduct({ product }) {
+  return (
+    <div className="product-card">
+      <img src={tgCard} alt={product.name} className="product-image" />
+      <h3>{product.name}</h3>
+      <p>{product.description}</p>
+      <div className="product-price">{product.price}</div>
+    </div>
+  );
+}
+
+
   
 
 

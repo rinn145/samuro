@@ -1,33 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import './assets/fonts.css';
 import Samurai from './Frame.svg';
 
 function Navbar() {
-    return (
+  return (
     <div>
-        <section class="navbar">
-        <div class="logo">Samuro<br />Studio</div>
-        <div class="catalog-button">
-            <i class="fas fa-list"></i> 
-            <span>Catalog</span>
+      <section className="navbar">
+        <div className="logo">Samuro<br />Studio</div>
+        <div className="catalog-button">
+          <i className="fas fa-list"></i>
+          <span>Catalog</span>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search" />
-            <i class="fas fa-search"></i>
+        <div className="search-bar">
+          <input type="text" placeholder="Search" />
+          <i className="fas fa-search"></i>
         </div>
-        <div class="nav-icons">
-            <i class="fas fa-user"><span>Account</span></i>
-            <i class="fas fa-comments"><span>Chat</span></i>
+        <div className="nav-icons">
+          <i className="fas fa-user"><span>Account</span></i>
+          <i className="fas fa-comments"><span>Chat</span></i>
         </div>
-     </section>
-
-      <section class="logo-frame">
-        <img src={Samurai} alt="samuro" class="samuro-frame" />
-        </section>
+      </section>
+      <section className="logo-frame">
+        <img src={Samurai} alt="samuro" className="samuro-frame" />
+      </section>
     </div>
-    )
+  );
 }
 
 export default Navbar;
