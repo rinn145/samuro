@@ -9,6 +9,7 @@ import Footer from './footer';
 import Content from './content';
 import ProductCard from './productCard';
 import Chat from './chat';
+import Account from './Account';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             </>
           }
         />
+        <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
         {/* <Route element={<Content />} /> */}
       </Routes>
