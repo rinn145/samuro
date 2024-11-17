@@ -19,12 +19,13 @@ function Navbar() {
         </div>
         <div className="nav-icons">
           <i className="fas fa-user"><span>Account</span></i>
-          <i className="fas fa-comments"><span>Chat</span></i>
+          <Link to="/chat" className="nav-link">
+            <i className="fas fa-comments"></i>
+            <span>Chat</span>
+          </Link>
         </div>
       </section>
-      <section className="logo-frame">
-        <img src={Samurai} alt="samuro" className="samuro-frame" />
-      </section>
+      
     </div>
   );
 }
