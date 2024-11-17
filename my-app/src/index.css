@@ -18,6 +18,20 @@ div {
   border-radius: 10px;
 }
 
+.navbar button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.nav-link {
+  text-decoration: none;
+}
+
 /* Стили для логотипа */
 .logo {
   font-size: 20px;
@@ -312,3 +326,4 @@ div {
   margin-bottom: 7px;
 }
 
+/*Chat*/
