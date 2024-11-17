@@ -10,26 +10,19 @@ import Content from './content';
 import ProductCard from './productCard';
 import Chat from './chat';
 import Account from './Account';
+import Catalog from './catalog';
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <LogoFrame />
-              <ProductCard />
-              <Content />
-            </>
-          }
-        />
+        <Route path="/" element={<> <LogoFrame /> <ProductCard isCatalog={false} /> <Content /></>} />
+        <Route path="/catalog" element={<><ProductCard /><Catalog /></>} />
         <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
-        {/* <Route element={<Content />} /> */}
       </Routes>
+
       <Footer />
     </BrowserRouter>
   );

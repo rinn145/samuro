@@ -12,10 +12,12 @@ function Navbar() {
             <div className="logo">Samuro<br />Studio</div>
           </Link>
         </button>
+      <Link to="/Catalog" className='nav-link'>
         <div className="catalog-button">
           <i className="fas fa-list"></i>
           <span>Catalog</span>
         </div>
+      </Link>
         <div className="search-bar">
           <input type="text" placeholder="Search" />
           <i className="fas fa-search"></i>
