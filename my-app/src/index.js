@@ -12,10 +12,11 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <ProductCard />
       <Routes>
         <Route path='/product' element={<ProductCard />} />
-        <Route path='/content' element={<Content />} />
       </Routes>
+      <Content />
       <Footer />
     </BrowserRouter>
   );
