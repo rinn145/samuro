@@ -4,7 +4,7 @@ import './index.css';
 import './assets/fonts.css';
 import tgCard from './tgCard.svg';
 
-function ProductCard(isCatalog ) {
+function ProductCard( ) {
 
   const categories = [
     {
@@ -49,8 +49,8 @@ function ProductCard(isCatalog ) {
     <div>
       {categories.map((category) => (
         <div key={category.id} className="category-section">
-          {/* Название категории показываем только, если это не каталог */}
-          {!isCatalog && <h2>{category.name}</h2>}
+          {/* Отображение названия категории, если это не каталог */}
+          <h2>{category.name}</h2>
           <div className="product-grid">
             {category.products.map((product) => (
               <SingleProduct key={product.id} product={product} />

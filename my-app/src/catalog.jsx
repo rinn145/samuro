@@ -13,7 +13,7 @@ const Catalog = () => {
   };
 
   return (
-    <div style={{ display: "flex", paddingTop: "20px" }}>
+    <div>
       {/* Панель фильтра */}
       <div
         style={{
@@ -45,10 +45,6 @@ const Catalog = () => {
         </ul>
       </div>
 
-      {/* Карточки продуктов */}
-      <div>
-        <ProductCard isCatalog={true} />
-      </div>
     </div>
   );
 };

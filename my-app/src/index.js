@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<> <LogoFrame /> <ProductCard isCatalog={false} /> <Content /></>} />
+        <Route path="/" element={<> <LogoFrame /> <ProductCard /> <Content /></>} />
         <Route path="/catalog" element={<><ProductCard /><Catalog /></>} />
         <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
