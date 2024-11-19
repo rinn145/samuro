@@ -21,6 +21,13 @@ const ChatApp = () => {
     setCurrentChat(chatName);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  };
+
+
   const sendMessage = () => {
     if (messageInput.trim()) {
       setChats((prevChats) => ({
@@ -79,9 +86,8 @@ const ChatApp = () => {
           {chats[currentChat].map((message, index) => (
             <div
               key={index}
-              className={`message ${
-                message.sender === "user" ? "user" : "agent"
-              }`}
+              className={`message ${message.sender === "user" ? "user" : "agent"
+                }`}
             >
               <div className="bubble">
                 {message.file ? (
@@ -95,49 +101,50 @@ const ChatApp = () => {
         </div>
 
         <div className="message-input" style={{ position: "relative", width: "100%" }}>
-            <input
-              type="text"
-              value={messageInput}
-              onChange={(e) => setMessageInput(e.target.value)}
-              placeholder="Message"
-              className="input"
-            />
-            <button
-              onClick={sendMessage}
-              style={{
-                position: "absolute",
-                right: "24px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                border: "none",
-                background: "transparent",
-                cursor: "pointer",
-              }}
-            >
-              &#10148;
-            </button>
-            <button
-              onClick={() => document.getElementById("fileInput").click()}
-              style={{
-                position: "absolute",
-                right: "45px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                border: "none",
-                background: "transparent",
-                cursor: "pointer",
-              }}
-            >
-              📎
-            </button>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={sendFile}
-              style={{ display: "none" }}
-              id="fileInput"
-            />
-</div>
+          <input
+            type="text"
+            value={messageInput}
+            onChange={(e) => setMessageInput(e.target.value)}
+            onKeyDown={handleKeyPress}
+            placeholder="Message"
+            className="input"
+          />
+          <button
+            onClick={() => document.getElementById("fileInput").click()}
+            style={{
+              position: "absolute",
+              right: "45px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              border: "none",
+              background: "transparent",
+              cursor: "pointer",
+            }}
+          >
+            <i className="fas fa-arrow-right"></i>
+            <i className="fas fa-paperclip"></i>
+          </button>
+          <button
+            onClick={() => document.getElementById("fileInput").click()}
+            style={{
+              position: "absolute",
+              right: "45px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              border: "none",
+              background: "transparent",
+              cursor: "pointer",
+            }}
+          >
+          </button>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={sendFile}
+            style={{ display: "none" }}
+            id="fileInput"
+          />
+        </div>
       </div>
     </div>
   );

@@ -30,6 +30,7 @@ div {
 
 .nav-link {
   text-decoration: none;
+  color: black;
 }
 
 /* Стили для логотипа */
@@ -48,12 +49,12 @@ div {
 .catalog-button {
   display: flex;
   align-items: center;
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 20px;
+  border: 1px solid #000;
+  border-radius: 42px;
   padding: 5px 15px;
   margin-right: 10px;
   cursor: pointer;
+  height: 40px;
 }
 
 .catalog-button span {
@@ -334,7 +335,8 @@ div {
   height: 720px;
   overflow: hidden;
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 15px;
+  padding-bottom: 20px;
 }
 
 .chat-sidebar {
@@ -376,7 +378,7 @@ div {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: #d9534f;
+  background-color: #CF1919;
   color: white;
   display: flex;
   align-items: center;
@@ -417,6 +419,7 @@ div {
 .message {
   display: flex;
   margin-bottom: 10px;
+  max-width: 980px;
   font-family: Inria Sans;
   font-size: 16px;
   font-weight: 400;
@@ -424,6 +427,7 @@ div {
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+  word-wrap: break-word
 
 }
 
