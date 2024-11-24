@@ -21,6 +21,7 @@ function App() {
         <Route path="/catalog" element={<><ProductCard /><Catalog /></>} />
         <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
+        {/* <Route path='*' element={<NotFoundPage />} /> */}
       </Routes>
 
       <Footer />

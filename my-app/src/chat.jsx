@@ -27,7 +27,6 @@ const ChatApp = () => {
     }
   };
 
-
   const sendMessage = () => {
     if (messageInput.trim()) {
       setChats((prevChats) => ({
@@ -59,39 +58,42 @@ const ChatApp = () => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-sidebar">
-        <h2>Chat</h2>
+    <div className="chat-app">
+      <div className="chat-app__sidebar">
+        <h2 className="chat-app__sidebar-title">Chat</h2>
         {Object.keys(chats).map((chatName) => (
           <div
             key={chatName}
-            className="contact"
+            className="chat-app__contact"
             onClick={() => switchChat(chatName)}
           >
-            <div className="avatar">{chatName[0]}</div>
-            <div className="contact-info">
-              <div>{chatName}</div>
+            <div className="chat-app__avatar">{chatName[0]}</div>
+            <div className="chat-app__contact-info">
+              <div className="chat-app__contact-name">{chatName}</div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="chat-area">
-        <div className="chat-header">
-          <div className="avatar">{currentChat[0]}</div>
-          <div className="chat-name">{currentChat}</div>
+      <div className="chat-app__area">
+        <div className="chat-app__header">
+          <div className="chat-app__avatar">{currentChat[0]}</div>
+          <div className="chat-app__chat-name">{currentChat}</div>
         </div>
 
-        <div className="message-list">
+        <div className="chat-app__messages">
           {chats[currentChat].map((message, index) => (
             <div
               key={index}
-              className={`message ${message.sender === "user" ? "user" : "agent"
-                }`}
+              className={`chat-app__message chat-app__message--${message.sender}`}
             >
-              <div className="bubble">
+              <div className="chat-app__bubble">
                 {message.file ? (
-                  <img src={message.file} alt="Uploaded file" className="image" />
+                  <img
+                    src={message.file}
+                    alt="Uploaded file"
+                    className="chat-app__image"
+                  />
                 ) : (
                   message.text
                 )}
@@ -100,42 +102,20 @@ const ChatApp = () => {
           ))}
         </div>
 
-        <div className="message-input" style={{ position: "relative", width: "100%" }}>
+        <div className="chat-app__input">
           <input
             type="text"
             value={messageInput}
             onChange={(e) => setMessageInput(e.target.value)}
             onKeyDown={handleKeyPress}
             placeholder="Message"
-            className="input"
+            className="chat-app__input-field"
           />
           <button
             onClick={() => document.getElementById("fileInput").click()}
-            style={{
-              position: "absolute",
-              right: "45px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              border: "none",
-              background: "transparent",
-              cursor: "pointer",
-            }}
+            className="chat-app__input-button"
           >
-            <i className="fas fa-arrow-right"></i>
             <i className="fas fa-paperclip"></i>
-          </button>
-          <button
-            onClick={() => document.getElementById("fileInput").click()}
-            style={{
-              position: "absolute",
-              right: "45px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              border: "none",
-              background: "transparent",
-              cursor: "pointer",
-            }}
-          >
           </button>
           <input
             type="file"
