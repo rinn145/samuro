@@ -182,7 +182,7 @@ div {
   line-height: 19.18px;
   margin-top: 2px;
   text-align: justify;
-  /* -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 130%); */
+-webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 130%); 
 
 }
 
