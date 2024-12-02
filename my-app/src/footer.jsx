@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import './index.css';
 import './assets/fonts.css';
-import tgIcons from'./tgIcons.svg'
+import tgIcons from './tgIcons.svg'
 
 function Footer() {
     return (
@@ -16,7 +17,11 @@ function Footer() {
                 <div class="social-icons">
                     <a href="#"><i class="icon-telegram"><img src={tgIcons} alt="tgIcons" /></i></a>
                 </div>
-                <div class="footer-logo">SAMURO<br />STUDIO</div>
+                <button>
+                    <Link to="" className='nav-link'>
+                        <div class="footer-logo">SAMURO<br />STUDIO</div>
+                    </Link>
+                </button>
             </div>
         </div>
     )

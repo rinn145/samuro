@@ -29,20 +29,17 @@ function ProductDetails() {
   // Найти продукт по ID
   const product = products.find((p) => p.id === parseInt(id));
   if (!product) {
-    return <h2>Продукт не найден.</h2>;
+    return <h2>Product not found</h2>;
   }
 
-  // Состояние комментариев
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-
-  // Состояние рейтинга
   const [rating, setRating] = useState(0);
 
   const handleAddComment = () => {
     if (newComment.trim()) {
       const comment = {
-        author: "User", // Здесь можно подставить имя авторизованного пользователя
+        author: "User",
         text: newComment,
         date: new Date().toLocaleDateString(),
       };
@@ -51,74 +48,94 @@ function ProductDetails() {
     }
   };
 
-  const updateRating = (newRating) => {
-    setRating(newRating);
+  const [chats, setChats] = useState({
+    "Support": [
+      { sender: "user", text: "Hello" },
+      { sender: "agent", text: "How can I assist you?" },
+    ]
+  });
+
+  const [currentChat, setCurrentChat] = useState("Support");
+  const [messageInput, setMessageInput] = useState("");
+
+  const handleSendMessage = () => {
+    if (messageInput.trim()) {
+      setChats((prevChats) => ({
+        ...prevChats,
+        [currentChat]: [
+          ...prevChats[currentChat],
+          { sender: "user", text: messageInput },
+        ],
+      }));
+      setMessageInput("");
+    }
   };
 
   return (
-    <div className="product-details">
-      {/* Изображение продукта */}
-      <img src={tgCard} alt={product.name} className="product-image-pers" />
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <div className="product-price-details">Цена: {product.price}</div>
-      <button className="buy-button">Купить</button>
-
-      {/* Блок с рейтингом */}
-      <div className="rating-section">
-        <h3>Рейтинг продукта</h3>
-        <div className="rating-stars">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <span
-              key={star}
-              className={`star ${star <= rating ? 'star--filled' : ''}`}
-              onClick={() => updateRating(star)}
-            >
-              ★
-            </span>
-          ))}
+    <div className="product-details-container">
+      <div className="product-details">
+        <div className="left-section">
+          <img src={tgCard} alt={product.name} className="product-image-pers" />
+          <h2>{product.name}</h2>
+          <div className="rating-section">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                className={`star ${star <= rating ? 'star--filled' : ''}`}
+                onClick={() => setRating(star)}
+              >
+                ★
+              </span>
+            ))}
+          </div>
+          <p>{product.description}</p>
+          <button className="buy-button">Buy</button>
         </div>
-        <p>Ваш рейтинг: {rating} из 5</p>
+
+        <div className="right-section">
+          <h3>Chat</h3>
+          <div className="chat-box">
+            {chats[currentChat].map((message, index) => (
+              <div key={index} className={`message ${message.sender}`}>
+                <div className="chat-bubble">
+                  {message.text}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="chat-input">
+            <input
+              type="text"
+              value={messageInput}
+              onChange={(e) => setMessageInput(e.target.value)}
+              placeholder="Type a message..."
+              onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
+            />
+            <button onClick={handleSendMessage}>Send</button>
+          </div>
+        </div>
       </div>
 
-      {/* Раздел с комментариями */}
       <div className="comments-section">
-        <h3>Комментарии</h3>
+        <h3>Product Valuation</h3>
         {comments.length === 0 ? (
-          <p>Пока нет комментариев.</p>
+          <p>No comments</p>
         ) : (
           comments.map((comment, index) => (
             <div key={index} className="comment">
-              <div className="comment-header">
-                <strong>{comment.author}</strong> <span>{comment.date}</span>
-              </div>
+              <strong>{comment.author}</strong> <span>{comment.date}</span>
               <p>{comment.text}</p>
             </div>
           ))
         )}
-
-        {/* Добавить комментарий */}
         <div className="add-comment">
           <textarea
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
-            placeholder="Напишите комментарий..."
+            placeholder="Leave a comment"
           />
-          <button onClick={handleAddComment}>Добавить</button>
-        </div>
-      </div>
-
-      {/* Чат */}
-      <div className="chat-section">
-        <h3>Чат</h3>
-        <div className="chat-box">
-          {/* Пример сообщений */}
-          <div className="message">Привет, как работает этот бот?</div>
-          <div className="message response">Этот бот автоматизирует задачи!</div>
-        </div>
-        <div className="chat-input">
-          <input type="text" placeholder="Введите сообщение..." />
-          <button>Отправить</button>
+          <button onClick={handleAddComment}>Add Comment</button>
         </div>
       </div>
     </div>
@@ -126,3 +143,4 @@ function ProductDetails() {
 }
 
 export default ProductDetails;
+
