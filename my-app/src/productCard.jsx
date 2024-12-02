@@ -49,35 +49,26 @@ function ProductCard( ) {
     <div>
       {categories.map((category) => (
         <div key={category.id} className="category-section">
-          {/* Отображение названия категории, если это не каталог */}
           <h2>{category.name}</h2>
           <div className="product-grid">
             {category.products.map((product) => (
-              <SingleProduct key={product.id} product={product} />
+              <Link
+                key={product.id}
+                to={`/product/${product.id}`}
+                className="product-card" // Ссылка оборачивает карточку
+              >
+                <img src={tgCard} alt={product.name} className="product-image" />
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <div className="product-price">{product.price}</div>
+              </Link>
             ))}
           </div>
-          <Link to="/" className="see-more">See more</Link>
         </div>
       ))}
     </div>
   );
 }
-
-function SingleProduct({ product }) {
-  return (
-    <div className="product-card">
-      <img src={tgCard} alt={product.name} className="product-image" />
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-      <div className="product-price">{product.price}</div>
-    </div>
-  );
-}
-
-
-
-
-
 
 
 export default ProductCard;

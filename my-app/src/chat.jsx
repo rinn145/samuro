@@ -124,7 +124,7 @@ const ChatApp = () => {
             style={{ display: "none" }}
             id="fileInput"
           />
-          <i className="fas fa-paperclip"></i>
+          <i className="fas fa-arrow-right"></i>
         </div>
       </div>
     </div>
