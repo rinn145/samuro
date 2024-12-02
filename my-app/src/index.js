@@ -12,6 +12,7 @@ import Chat from './chat';
 import Account from './Account';
 import Catalog from './catalog';
 import ProductDetailsWrapper from './ProductDetails';
+import Registor from './registor';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         {/* <Route path='*' element={<NotFoundPage />} /> */}
         <Route path="/product/:id" element={<ProductDetailsWrapper />} />
+        <Route path="/registor" element={<Registor />} />
       </Routes>
 
       <Footer />

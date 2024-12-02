@@ -48,83 +48,51 @@ function ProductDetails() {
     }
   };
 
-  const [chats, setChats] = useState({
-    "Support": [
-      { sender: "user", text: "Hello" },
-      { sender: "agent", text: "How can I assist you?" },
-    ]
-  });
-
-  const [currentChat, setCurrentChat] = useState("Support");
-  const [messageInput, setMessageInput] = useState("");
-
-  const handleSendMessage = () => {
-    if (messageInput.trim()) {
-      setChats((prevChats) => ({
-        ...prevChats,
-        [currentChat]: [
-          ...prevChats[currentChat],
-          { sender: "user", text: messageInput },
-        ],
-      }));
-      setMessageInput("");
-    }
-  };
-
   return (
     <div className="product-details-container">
-      <div className="product-details">
-        <div className="left-section">
-          <img src={tgCard} alt={product.name} className="product-image-pers" />
-          <h2>{product.name}</h2>
-          <div className="rating-section">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                key={star}
-                className={`star ${star <= rating ? 'star--filled' : ''}`}
-                onClick={() => setRating(star)}
-              >
-                ★
-              </span>
-            ))}
-          </div>
-          <p>{product.description}</p>
-          <button className="buy-button">Buy</button>
+      {/* Левая часть */}
+      <div className="left-section">
+        <img src={tgCard} alt={product.name} className="product-image-pers" />
+        <h2>{product.name}</h2>
+        <div className="rating-section">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <span
+              key={star}
+              className={`star ${star <= rating ? 'star--filled' : ''}`}
+              onClick={() => setRating(star)}
+            >
+              ★
+            </span>
+          ))}
         </div>
+        <p className="product-description">{product.description}</p>
+        <button className="buy-button">buy</button>
+      </div>
 
-        <div className="right-section">
-          <h3>Chat</h3>
-          <div className="chat-box">
-            {chats[currentChat].map((message, index) => (
-              <div key={index} className={`message ${message.sender}`}>
-                <div className="chat-bubble">
-                  {message.text}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="chat-input">
-            <input
-              type="text"
-              value={messageInput}
-              onChange={(e) => setMessageInput(e.target.value)}
-              placeholder="Type a message..."
-              onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-            />
-            <button onClick={handleSendMessage}>Send</button>
-          </div>
+      {/* Правая часть */}
+      <div className="right-section">
+        <h3>Chat</h3>
+        <div className="chat-box">
+          <div className="message">Привет, как работает этот бот?</div>
+          <div className="message response">Этот бот автоматизирует задачи!</div>
+        </div>
+        <div className="chat-input">
+          <input type="text" placeholder="Введите сообщение..." />
+          <button>Отправить</button>
         </div>
       </div>
 
-      <div className="comments-section">
-        <h3>Product Valuation</h3>
+      {/* Нижняя часть - отзывы */}
+      <div className="product-valuation-section">
+        <h3>Product Valuation-</h3>
         {comments.length === 0 ? (
-          <p>No comments</p>
+          <p>No comment</p>
         ) : (
           comments.map((comment, index) => (
             <div key={index} className="comment">
-              <strong>{comment.author}</strong> <span>{comment.date}</span>
+              <div className="comment-header">
+                <strong>{comment.author}</strong> <span>{comment.date}</span>
+              </div>
               <p>{comment.text}</p>
             </div>
           ))
@@ -133,9 +101,9 @@ function ProductDetails() {
           <textarea
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
-            placeholder="Leave a comment"
+            placeholder="Напишите комментарий..."
           />
-          <button onClick={handleAddComment}>Add Comment</button>
+          <button onClick={handleAddComment}>Add</button>
         </div>
       </div>
     </div>
@@ -143,4 +111,3 @@ function ProductDetails() {
 }
 
 export default ProductDetails;
-
