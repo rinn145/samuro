@@ -1,5 +1,5 @@
 import React from 'react';
-import Samurai from './Frame.svg';
+import Samurai from '../Frame.svg';
 
 function logoFrame(){
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProductCard from "./productCard/productCard";
+import ProductCard from '../productCard/productCard';
 
 const Catalog = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
