@@ -10,7 +10,7 @@ import Content from './content/content';
 import ProductCard from './productCard/productCard';
 import Chat from './chat/chat';
 import Account from './account/Account';
-import Catalog from './catalog/catalog';
+import Filter from './filter/filter';
 import ProductDetailsWrapper from './productDetails/ProductDetails';
 import Registor from './registor/registor';
 import ResetPass from './resetpass/Resetpass';
@@ -21,7 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<> <LogoFrame /> <ProductCard /> <Content /></>} />
-        <Route path="/catalog" element={<><ProductCard /><Catalog /></>} />
+        <Route path="/catalog" element={<><ProductCard /><Filter /></>} />
         <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
         {/* <Route path='*' element={<NotFoundPage />} /> */}

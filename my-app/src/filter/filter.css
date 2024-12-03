@@ -1,0 +1,36 @@
+/* Контейнер фильтра */
+.filter-container {
+  top: 177px;
+  left: 20px;
+  position: fixed;
+}
+
+/* Заголовок фильтра */
+.filter-header {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.filter-header i {
+  margin-right: 10px;
+}
+
+/* Элементы фильтра */
+.filter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter-item label {
+  font-size: 16px;
+}
+
+.filter-item .check-icon {
+  color: red;
+  font-size: 16px;
+}
