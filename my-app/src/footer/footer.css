@@ -1,0 +1,53 @@
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #000000;
+  margin-top: 45px;
+  padding-top: 22px;
+}
+
+.footer button{
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.footer-links a {
+  margin-right: 56px;
+  color: #333;
+  text-decoration: none;
+  font-family: 'Inria Sans';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.18px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  margin: 0 5px;
+  font-size: 1.2em;
+  color: #333;
+  max-width: 51px;
+  max-height: 51px;
+  margin-right: 56px;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #CF1919;
+  margin-right: 20px;
+  font-family: 'DEATHBLOOD';
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 23.04px;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.css';
-import './assets/fonts.css';
+import '../account/account.css';
+import '../assets/fonts.css';
 
 
 function ShoppingTable() {

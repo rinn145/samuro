@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-import './index.css';
-import './assets/fonts.css';
-import tgIcons from './tgIcons.svg'
+import '../footer/footer.css';
+import '../assets/fonts.css';
+import tgIcons from '../tgIcons.svg'
 
 function Footer() {
     return (

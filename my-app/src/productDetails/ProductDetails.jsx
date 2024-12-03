@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './index.css';
-import './assets/fonts.css';
-import tgCard from './tgCard.svg';
+import '../productDetails/productDetails.css';
+import '../assets/fonts.css';
+import tgCard from '../tgCard.svg';
 
 function ProductDetails() {
   const { id } = useParams();

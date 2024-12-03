@@ -1,0 +1,63 @@
+
+
+.samuro-studio-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.samuro-studio-content {
+  padding-left: 64px;
+}
+
+.samuro-studio-content h1 {
+  font-size: 2em;
+  color: #CF1919;
+  /* Цвет заголовка */
+  margin: 0;
+  font-family: 'DEATHBLOOD';
+  font-size: 96px;
+  font-weight: 900;
+  line-height: 110.59px;
+  text-align: center;
+
+}
+
+.samuro-studio-content p {
+  font-size: 1.2em;
+  margin: 10px 0;
+  font-family: 'Inria Sans';
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.37px;
+  text-align: left;
+
+}
+
+.join-button {
+  background-color: #CF1919;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 60px;
+  cursor: pointer;
+  width: 455px;
+  height: 70px;
+  font-family: 'Inria Sans';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.78px;
+  margin-top: 31px;
+
+
+}
+
+.samuro-studio-image img {
+  max-width: 551px;
+  border-radius: 10px;
+}

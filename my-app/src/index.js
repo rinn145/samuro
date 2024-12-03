@@ -3,17 +3,17 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import './assets/fonts.css';
-import Navbar from './navbar';
+import Navbar from './navbar/navbar';
 import LogoFrame from './logo_frame';
-import Footer from './footer';
-import Content from './content';
-import ProductCard from './productCard';
-import Chat from './chat';
-import Account from './Account';
+import Footer from './footer/footer';
+import Content from './content/content';
+import ProductCard from './productCard/productCard';
+import Chat from './chat/chat';
+import Account from './account/Account';
 import Catalog from './catalog';
-import ProductDetailsWrapper from './ProductDetails';
-import Registor from './registor';
-import ResetPass from './Resetpass';
+import ProductDetailsWrapper from './productDetails/ProductDetails';
+import Registor from './registor/registor';
+import ResetPass from './resetpass/Resetpass';
 
 function App() {
   return (

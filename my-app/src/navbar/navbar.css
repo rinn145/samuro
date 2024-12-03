@@ -1,0 +1,134 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.navbar button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link-a {
+  color: white;
+}
+
+/* Стили для логотипа */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #CF1919;
+  margin-right: 20px;
+  font-family: 'DEATHBLOOD';
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 23.04px;
+}
+
+/* Стили для кнопки каталога */
+.catalog-button {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 42px;
+  padding: 5px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.catalog-button span {
+  font-family: 'Inria Sans';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.18px;
+}
+
+.category-section h2 {
+  font-family: 'Inria Sans';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.78px;
+  text-align: left;
+
+}
+
+.catalog-button i {
+  margin-right: 5px;
+}
+
+/* Стили для поля поиска */
+.search-bar {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.search-bar i {
+  margin-right: 17px;
+  color: #555;
+}
+
+/* Стили для иконок */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-icons i {
+  display: block;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+}
+
+.nav-icons span {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-left: 5px;
+  font-family: 'Inria Sans';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.18px;
+  text-align: center;
+
+}
+
+.nav-icons div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-frame {
+  padding-top: 21px;
+  width: 1600px;
+  height: 363px;
+  margin: 0 auto;
+}

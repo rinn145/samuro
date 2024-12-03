@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.css';
-import './assets/fonts.css';
-import SamuraiFooter from './samura.svg';
+import '../content/content.css';
+import '../assets/fonts.css';
+import SamuraiFooter from '../samura.svg';
 
 function Content() {
   return (

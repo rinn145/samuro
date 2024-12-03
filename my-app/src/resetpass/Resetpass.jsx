@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import './index.css';
-import './assets/fonts.css';
+import '../resetpass/resetpass.css';
+import '../assets/fonts.css';
 
 
 

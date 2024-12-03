@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.css';
-import './assets/fonts.css';
-import tgCard from './tgCard.svg';
+import '../productCard/productCard.css';
+import '../assets/fonts.css';
+import tgCard from '../tgCard.svg';
 
 function ProductCard( ) {
 
