@@ -12,7 +12,7 @@ function Content() {
         <p>Do you want to sell your programs with us?</p>
         <button className="join-button">
           {/* Используем Link для навигации на страницу регистрации */}
-          <Link to="/registor" className="nav-link">
+          <Link to="/registor" className="nav-link-a">
             Join us
           </Link>
         </button>

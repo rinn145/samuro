@@ -36,6 +36,10 @@ Link , a {
   color: black;
 }
 
+.nav-link-a {
+  color: white;
+}
+
 /* Стили для логотипа */
 .logo {
   font-size: 20px;
@@ -835,4 +839,108 @@ Link , a {
 }
 .form--active {
   display: block;
+}
+
+
+
+/* Общие стили для страницы сброса пароля */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f7fb;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.container__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-container {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-container__input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  outline: none;
+}
+
+.input-container__input:focus {
+  border-color: #4d90fe;
+  background-color: #fff;
+}
+
+.input-container__icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #999;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 48%;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.btn--reset {
+  background-color: #4d90fe;
+  color: white;
+}
+
+.btn--reset:hover {
+  background-color: #357ae8;
+}
+
+.btn--remembered {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.btn--remembered:hover {
+  background-color: #e0e0e0;
+}
+
+.btn--verify {
+  width: 100%;
+  background-color: #4d90fe;
+  color: white;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.btn--verify:hover {
+  background-color: #357ae8;
 }

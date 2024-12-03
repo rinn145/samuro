@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './index.css';
 import './assets/fonts.css';
+import ResetPass from './Resetpass';
 
 const LoginRegistrationForm = () => {
   const [activeForm, setActiveForm] = useState('login'); // Стейт для активной формы
@@ -38,7 +40,7 @@ const LoginRegistrationForm = () => {
         </div>
         <div className="form-group">
           <input type="password" className="form__input" placeholder="Password" />
-          <a href="#" className="form__forgot-password">Forgot your username or password?</a>
+          <Link to='/ResetPass' className="form__forgot-password">Forgot your username or password?</Link>
         </div>
         <button className="form__submit-button">Log-in</button>
       </div>
