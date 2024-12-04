@@ -6,6 +6,31 @@
   margin: 30px auto 0;
 }
 
+
+.shopping-table__tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.shopping-table__tab {
+  font-family: Inria Sans;
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #555;
+}
+
+.shopping-table__tab.active {
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+  color: #000;
+}
+
+
 .shopping-table__profile {
   width: 200px;
   text-align: center;

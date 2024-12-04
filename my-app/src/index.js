@@ -24,7 +24,7 @@ function App() {
         <Route path="/catalog" element={<><ProductCard /><Filter /></>} />
         <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
-        {/* <Route path='*' element={<NotFoundPage />} /> */}
+        {/* <Route path='*' element={<NotFoundPage />} /> */} 
         <Route path="/product/:id" element={<ProductDetailsWrapper />} />
         <Route path="/registor" element={<> <Registor /> </>}  />
         <Route path="/Resetpass" element={<ResetPass />} /> 
