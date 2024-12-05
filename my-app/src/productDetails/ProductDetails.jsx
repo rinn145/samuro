@@ -93,7 +93,6 @@ function ProductDetails() {
         </div>
 
         <div className="right-section">
-          <h3>Chat</h3>
           <div className="chat-box">
             {chats[currentChat].map((message, index) => (
               <div key={index} className={message.sender}>

@@ -46,7 +46,8 @@
   color: white;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 790px;
+  height: 72px;
   text-align: center;
   border-radius: 60px;
   font-family: 'Inria Sans';
@@ -67,6 +68,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 790px;
 }
 
 .chat-box {
@@ -164,11 +166,3 @@
   margin-top: 10px;
 }
 
-.star {
-  cursor: pointer;
-  color: #ccc;
-}
-
-.star--filled {
-  color: #fbc02d;
-}
