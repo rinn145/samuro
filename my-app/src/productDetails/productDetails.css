@@ -4,7 +4,7 @@
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
+  font-family: 'Inria', sans-serif;
 }
 
 .left-section {
@@ -33,12 +33,18 @@
 }
 
 .star--filled {
-  color: #fbc02d;
+  color: #CF1919;
 }
 
 .product-description {
   margin-top: 10px;
+  font-family: Inria Sans;
   font-size: 16px;
+  font-weight: 400;
+  line-height: 19.18px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .buy-button {
@@ -72,27 +78,32 @@
 }
 
 .chat-box {
+  display: flex;
   flex-grow: 1;
   overflow-y: auto;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #CF1919;
   border-radius: 10px;
+  flex-direction: column;
 }
 
 .chat-input {
   display: flex;
   gap: 10px;
 }
-
+.user {
+  display: flex;
+  justify-content: flex-end;
+}
 .chat-input input {
   flex-grow: 1;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #CF1919;
   border-radius: 5px;
 }
 
 .chat-input button {
-  background-color: #4caf50;
+  background-color: #CF1919;
   color: white;
   padding: 10px;
   border: none;
@@ -106,7 +117,7 @@
 }
 
 .comment {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #CF1919;
   padding: 10px 0;
 }
 
@@ -119,14 +130,14 @@
   width: 100%;
   height: 60px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #CF1919;
   border-radius: 5px;
 }
 
 .add-comment button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #CF1919;
   color: white;
   border: none;
   border-radius: 5px;
@@ -134,7 +145,7 @@
 }
 
 .add-comment button:hover {
-  background-color: #0056b3;
+  background-color: #CF1919;
 }
 
 .product-details-container {
@@ -158,7 +169,8 @@
 }
 
 .right-section {
-  width: 50%;
+  width: 790px;
+  height: 490px;
   padding-left: 360px;
 }
 
@@ -166,3 +178,6 @@
   margin-top: 10px;
 }
 
+
+
+/*CF1919*/
