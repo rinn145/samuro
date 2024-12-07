@@ -9,10 +9,10 @@
   max-width: 790px;
   height: 258px;
   margin: 0 auto;
-  border-color: #000;
+  text-align: center;
+  border: 1px solid #000;
   margin-top: 40px;
   border-radius: 25px ;
-
 }
 
 .container__title {
@@ -50,15 +50,6 @@
   background-color: #fff;
 }
 
-.input-container__icon {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #999;
-}
-
 .button-group {
   display: flex;
   justify-content: space-between;
@@ -90,7 +81,7 @@
 
 .btn--remembered {
   background-color: #ffff;
-  border-color: #000;
+  border: 1px solid #000;
   width: 331px;
   height: 57px;
   font-family: 'Inria Sans';
@@ -103,12 +94,15 @@
 
 
 .btn--verify {
-  width: 100%;
+  width: 685px;
   background-color: #CF1919;
   color: white;
-  border-radius: 4px;
+  border-radius: 33px;
   padding: 12px;
-  font-size: 16px;
+  font-family: 'Inria Sans';
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.98px;
 }
 
 .btn--verify:hover {
