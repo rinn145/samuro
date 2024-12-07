@@ -14,6 +14,7 @@ import Filter from './filter/filter';
 import ProductDetailsWrapper from './productDetails/ProductDetails';
 import Registor from './registor/registor';
 import ResetPass from './resetpass/Resetpass';
+import NewPass from './resetpass/newpass';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetailsWrapper />} />
         <Route path="/registor" element={<> <Registor /> </>}  />
         <Route path="/Resetpass" element={<ResetPass />} /> 
+        <Route path="/NewPass" element={<NewPass />} /> 
       </Routes>
 
       <Footer />

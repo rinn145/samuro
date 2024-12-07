@@ -17,22 +17,8 @@ const PasswordReset = () => {
         </div>
         <div className="button-group">
           <button className="btn btn--reset">Password reset</button>
-          <button className="btn btn--remembered">I remembered the password</button>
+         <Link to='/Newpass' className='nav-link'><button className="btn btn--remembered">I remembered the password</button></Link>
         </div>
-      </div>
-
-      {/* Enter New Password Form */}
-      <div className="container">
-        <h2 className="container__title">ENTER A NEW PASSWORD</h2>
-        <div className="input-container">
-          <input type="password" className="input-container__input" placeholder="Password" />
-          <span className="input-container__icon">✈️</span>
-        </div>
-        <div className="input-container">
-          <input type="password" className="input-container__input" placeholder="Repeat the password" />
-          <span className="input-container__icon">✈️</span>
-        </div>
-        <button className="btn btn--verify">Verify password</button>
       </div>
     </div>
   );
