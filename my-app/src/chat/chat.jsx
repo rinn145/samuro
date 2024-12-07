@@ -59,21 +59,27 @@ const ChatApp = () => {
 
   return (
     <div className="chat-app">
-      <div className="chat-app__sidebar">
-        <h2 className="chat-app__sidebar-title">Chat</h2>
-        {Object.keys(chats).map((chatName) => (
-          <div
-            key={chatName}
-            className="chat-app__contact"
-            onClick={() => switchChat(chatName)}
-          >
-            <div className="chat-app__avatar">{chatName[0]}</div>
-            <div className="chat-app__contact-info">
-              <div className="chat-app__contact-name">{chatName}</div>
+     <div className="chat-app__sidebar">
+    <h2 className="chat-app__sidebar-title">Chat</h2>
+    {Object.keys(chats).map((chatName) => {
+      const lastMessage = chats[chatName][chats[chatName].length - 1];
+      return (
+        <div
+          key={chatName}
+          className="chat-app__contact"
+          onClick={() => switchChat(chatName)}
+        >
+          <div className="chat-app__avatar">{chatName[0]}</div>
+          <div className="chat-app__contact-info">
+            <div className="chat-app__contact-name">{chatName}</div>
+            <div className="chat-app__last-message">
+              {lastMessage.file ? "Image sent" : lastMessage.text}
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      );
+    })}
+  </div>
 
       <div className="chat-app__area">
         <div className="chat-app__header">

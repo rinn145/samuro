@@ -26,6 +26,7 @@
   align-items: center;
   margin-bottom: 35px;
   cursor: pointer;
+  width: 240px;
 }
 
 .chat-app__avatar {
@@ -133,4 +134,19 @@
   border: none;
   background: transparent;
   cursor: pointer;
+}
+
+.chat-app__last-message {
+  font-family: Inria Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.18px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #777; /* Серый цвет для менее заметного текста */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px; /* Ограничение по ширине */
 }
