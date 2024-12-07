@@ -1,12 +1,14 @@
 .form-container {
-  width: 400px;
+  max-width: 790px;
+  height: 400px;
   padding: 30px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #000;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 /* Стили для вкладок */
@@ -16,6 +18,10 @@
   margin-bottom: 20px;
   font-size: 1.2em;
   color: #333;
+  font-family: Inria Sans;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.37px;
 }
 .tabs__tab {
   padding: 10px 20px;
@@ -32,13 +38,21 @@
   font-size: 0.9em;
   color: #666;
   margin-bottom: 20px;
+  font-family: Inria Sans;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.98px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 .form-group {
   margin-bottom: 20px;
   position: relative;
 }
+
 .form__input {
-  width: 100%;
+  width: 684px;
   padding: 10px 15px;
   border: 1px solid #ddd;
   border-radius: 20px;
@@ -59,21 +73,32 @@
   display: block;
   margin-top: 5px;
   text-decoration: none;
+  font-family: Inria Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.18px;
 }
 
 /* Кнопка входа */
 .form__submit-button {
   display: inline-block;
+  margin-top: 40px;
   width: 100%;
   padding: 12px 0;
   background-color: #e63c3c;
   color: #fff;
-  font-size: 1em;
-  font-weight: bold;
+  font-family: Inria Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.98px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
   border: none;
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  
 }
 .form__submit-button:hover {
   background-color: #c23636;
