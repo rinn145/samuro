@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../account/account.css';
 import '../assets/fonts.css';
-
+import UserInfo from '../userInfo/userInfo';
 function ShoppingTable() {
   const [activeTab, setActiveTab] = useState('shopping'); // Track the active tab
 
@@ -31,7 +32,9 @@ function ShoppingTable() {
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                   </td>
                   <td>
+                    <Link to="/UserInfo">
                     <div className="shopping-table__seller-image"></div>
+                    </Link>
                     <span className="shopping-table__seller-name">IvanGenius</span>
                   </td>
                   <td>

@@ -15,6 +15,8 @@ import ProductDetailsWrapper from './productDetails/ProductDetails';
 import Registor from './registor/registor';
 import ResetPass from './resetpass/Resetpass';
 import NewPass from './resetpass/newpass';
+import UserInfo from './userInfo/userInfo';
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
         <Route path="/registor" element={<> <Registor /> </>}  />
         <Route path="/Resetpass" element={<ResetPass />} /> 
         <Route path="/NewPass" element={<NewPass />} /> 
+        <Route path="/UserInfo" element={<> <UserInfo /> <ProductCard /> <Filter /> </> }/>;
       </Routes>
 
       <Footer />
