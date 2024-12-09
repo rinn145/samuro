@@ -126,7 +126,6 @@ function ProductDetails() {
           </div>
           <div className="chat-footer">
             <input type="text" placeholder="Message" />
-            <button>Send</button>
           </div>
         </div>
       </div>
