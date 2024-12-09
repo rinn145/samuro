@@ -93,27 +93,44 @@ function ProductDetails() {
         </div>
 
         <div className="right-section">
-          <div className="chat-box">
-            {chats[currentChat].map((message, index) => (
-              <div key={index} className={message.sender}>
-                <div className="chat-bubble">{message.text}</div>
-              </div>
-            ))}
+        <div className="chat-container">
+          <div className="chat-header">
+            <div className="avatar">Iv</div>
+            <div className="user-name">IvanGenius</div>
           </div>
-
-          <div className="chat-input">
-            <input
-              type="text"
-              value={messageInput}
-              onChange={(e) => setMessageInput(e.target.value)}
-              placeholder="Type a message..."
-              onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-            />
-            <button onClick={handleSendMessage}>Send</button>
+          <div className="chat-body">
+            <div className="message-container left">
+              <div className="message">Hello</div>
+            </div>
+            <div className="message-container right">
+              <div className="message">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s.
+              </div>
+            </div>
+            <div className="message-container left">
+              <div className="message">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s.
+              </div>
+            </div>
+            <div className="message-container right">
+              <div className="message">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s.
+              </div>
+            </div>
+          </div>
+          <div className="chat-footer">
+            <input type="text" placeholder="Message" />
+            <button>Send</button>
           </div>
         </div>
       </div>
-
+      </div>
       <div className="comments-section">
         <h3>Product Valuation</h3>
         {comments.length === 0 ? (
