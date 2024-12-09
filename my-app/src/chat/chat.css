@@ -9,7 +9,7 @@
 
 .chat-app__sidebar {
   width: 230px;
-  padding: 20px;
+  padding: 10px;
   border-right: 1px solid #000;
 }
 
@@ -75,7 +75,7 @@
   font-weight: 400;
 }
 
-.chat-app__messages {
+.chat-app__messages{
   flex-grow: 1;
   overflow-y: auto;
   height: 500px;
@@ -120,7 +120,7 @@
   border: 1px solid #000;
   padding: 10px 0;
   border-radius: 50px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .chat-app__input-field {
