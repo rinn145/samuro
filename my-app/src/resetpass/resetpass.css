@@ -43,13 +43,6 @@
   outline: none;
 }
 
-.input-container__input:focus {
-  width: 331px;
-  height: 57px;
-  opacity: 0px;
-  background-color: #fff;
-}
-
 .button-group {
   display: flex;
   justify-content: space-between;
