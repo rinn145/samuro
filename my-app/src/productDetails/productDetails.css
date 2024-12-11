@@ -70,19 +70,18 @@
 }
 
 .right-section {
-  width: 790px;
-  height: 825px;
-  margin-left: 360px;
+  margin-left: 450px;
   border: 1px solid #a19797;
   border-radius: 10px;
-  flex: 0 0 45%;
+  flex: 0 0 50%;
   display: flex;
   flex-direction: column;
   gap: 15px;
+
 }
 
 .chat-container {
-  width: 790px;
+  width: 670px;
   height: 825px;
   background: #fff;
   border-radius: 10px;

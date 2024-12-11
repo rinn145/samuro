@@ -64,6 +64,7 @@ function ProductCard( ) {
               </Link>
             ))}
           </div>
+            <div className='see-more'>See more</div>
         </div>
       ))}
     </div>
