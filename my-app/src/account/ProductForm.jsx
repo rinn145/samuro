@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../account/account.css';
 import '../assets/fonts.css';
-import '../account/ProductForm.css'
+import ProductForms from './ProductForm.css'
 
 const ProductForm = ({ onAddProduct }) => {
   const [productData, setProductData] = useState({
@@ -69,4 +69,3 @@ const ProductForm = ({ onAddProduct }) => {
 };
 
 export default ProductForm;
-
