@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import '../account/account.css';
 import '../assets/fonts.css';
-import ProductForms from './ProductForm.css'
+import './ProductForm.css'; // Ensure this path is correct for your project structure
+
+const categories = [
+  { id: 1, name: "Bot telegram" },
+  { id: 2, name: "Website template" },
+  { id: 3, name: "Mobile app" },
+];
 
 const ProductForm = ({ onAddProduct }) => {
   const [productData, setProductData] = useState({
     name: '',
     description: '',
-    price: ''
+    price: '',
+    currency: 'USD', // Default currency
+    category: '', // Default category (empty)
   });
 
   const handleInputChange = (e) => {
@@ -18,9 +25,9 @@ const ProductForm = ({ onAddProduct }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (productData.name && productData.description && productData.price) {
-      onAddProduct(productData);  // Вызываем переданную функцию для добавления продукта
-      setProductData({ name: '', description: '', price: '' });  // Сбрасываем форму
+    if (productData.name && productData.description && productData.price && productData.category) {
+      onAddProduct(productData);  // Call the parent function to add the product
+      setProductData({ name: '', description: '', price: '', currency: 'USD', category: '' });  // Reset form
       alert('Product added successfully!');
     } else {
       alert('Please fill out all fields.');
@@ -30,7 +37,7 @@ const ProductForm = ({ onAddProduct }) => {
   return (
     <div className="product-form__container">
       <h1 className="product-form__title">Adding a Product</h1>
-      
+
       <label htmlFor="name" className="product-form__label">Product Name</label>
       <input
         type="text"
@@ -62,6 +69,34 @@ const ProductForm = ({ onAddProduct }) => {
         className="product-form__input product-form__input--price"
         placeholder="Price"
       />
+
+      <label htmlFor="currency" className="product-form__label">Currency</label>
+      <select
+        id="currency"
+        name="currency"
+        value={productData.currency}
+        onChange={handleInputChange}
+        className="product-form__select"
+      >
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        {/* Add more currencies as needed */}
+      </select>
+
+      <label htmlFor="category" className="product-form__label">Category</label>
+      <select
+        id="category"
+        name="category"
+        value={productData.category}
+        onChange={handleInputChange}
+        className="product-form__select"
+      >
+        <option value="">Select Category</option>
+        {categories.map(category => (
+          <option key={category.id} value={category.name}>{category.name}</option>
+        ))}
+      </select>
 
       <button onClick={handleSubmit} className="product-form__save-button">Save</button>
     </div>

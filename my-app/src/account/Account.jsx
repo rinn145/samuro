@@ -74,7 +74,7 @@ function ShoppingTable() {
                 <td>{product.description}</td>
                 <td>
                   <div className="shopping-table__seller-image"></div>
-                  <span className="shopping-table__seller-name">IvanGenius</span>
+                  <span className="shopping-table__seller-name">Nickname</span>
                 </td>
                 <td>{product.price}$</td>
               </tr>
