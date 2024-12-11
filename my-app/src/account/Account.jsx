@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../account/account.css';
 import '../assets/fonts.css';
-import UserInfo from '../userInfo/userInfo';
+import ProductForm from './ProductForm';  // Импортируем компонент формы
+
 function ShoppingTable() {
-  const [activeTab, setActiveTab] = useState('shopping'); // Track the active tab
+  const [activeTab, setActiveTab] = useState('shopping');
+  const [products, setProducts] = useState([]);
+
+  const handleAddProduct = (product) => {
+    setProducts([...products, product]);  // Добавляем новый продукт в список
+  };
 
   const renderTableContent = () => {
     if (activeTab === 'shopping') {
@@ -33,7 +39,7 @@ function ShoppingTable() {
                   </td>
                   <td>
                     <Link to="/UserInfo">
-                    <div className="shopping-table__seller-image"></div>
+                      <div className="shopping-table__seller-image"></div>
                     </Link>
                     <span className="shopping-table__seller-name">IvanGenius</span>
                   </td>
@@ -61,31 +67,30 @@ function ShoppingTable() {
             </tr>
           </thead>
           <tbody>
-            {Array(3)
-              .fill()
-              .map((_, index) => (
-                <tr key={index}>
-                  <td>11.11.2024, 20:23</td>
-                  <td>Product #{index + 1}</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  </td>
-                  <td>
-                    <div className="shopping-table__seller-image"></div>
-                    <span className="shopping-table__seller-name">IvanGenius</span>
-                  </td>
-                  <td>15$</td>
-                </tr>
-              ))}
+            {products.map((product, index) => (
+              <tr key={index}>
+                <td>11.11.2024, 20:23</td>
+                <td>{product.name}</td>
+                <td>{product.description}</td>
+                <td>
+                  <div className="shopping-table__seller-image"></div>
+                  <span className="shopping-table__seller-name">IvanGenius</span>
+                </td>
+                <td>{product.price}$</td>
+              </tr>
+            ))}
           </tbody>
         </table>
+      );
+    } else if (activeTab === 'add-product') {
+      return (
+        <ProductForm onAddProduct={handleAddProduct} />  // Передаем функцию добавления продукта
       );
     }
   };
 
   return (
     <div className="shopping-table">
-      {/* Profile Section */}
       <div className="shopping-table__profile">
         <img
           src="profile-placeholder.png"
@@ -98,7 +103,6 @@ function ShoppingTable() {
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="shopping-table__content">
         <div className="shopping-table__tabs">
           <button
@@ -112,6 +116,12 @@ function ShoppingTable() {
             onClick={() => setActiveTab('product')}
           >
             My product
+          </button>
+          <button
+            className={`shopping-table__tab ${activeTab === 'add-product' ? 'active' : ''}`}
+            onClick={() => setActiveTab('add-product')}
+          >
+            Add product
           </button>
         </div>
 
