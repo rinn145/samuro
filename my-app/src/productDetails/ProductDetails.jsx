@@ -88,7 +88,7 @@ function ProductDetails() {
               </span>
             ))}
           </div>
-          <p>{product.description}</p>
+          <p className='right-section-p'>{product.description}</p>
           <button className="buy-button">Buy</button>
         </div>
 

@@ -77,8 +77,12 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-
 }
+
+.right-section-p {
+  width: 790px;
+}
+
 
 .chat-container {
   width: 670px;
