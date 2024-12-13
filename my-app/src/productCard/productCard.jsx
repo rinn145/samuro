@@ -4,7 +4,7 @@ import '../productCard/productCard.css';
 import '../assets/fonts.css';
 import tgCard from '../tgCard.svg';
 
-function ProductCard( ) {
+function ProductCard({ showCategoryName = true, showSeeMore = true }) {
 
   const categories = [
     {
@@ -45,17 +45,18 @@ function ProductCard( ) {
 
 
 
+ 
   return (
     <div>
       {categories.map((category) => (
         <div key={category.id} className="category-section">
-          <h2>{category.name}</h2>
+          {showCategoryName && <h2>{category.name}</h2>}
           <div className="product-grid">
             {category.products.map((product) => (
               <Link
                 key={product.id}
                 to={`/product/${product.id}`}
-                className="product-card" // Ссылка оборачивает карточку
+                className="product-card"
               >
                 <img src={tgCard} alt={product.name} className="product-image" />
                 <h3>{product.name}</h3>
@@ -64,12 +65,11 @@ function ProductCard( ) {
               </Link>
             ))}
           </div>
-            <div className='see-more'>See more</div>
+          {showSeeMore && <div className="see-more">See more</div>}
         </div>
       ))}
     </div>
   );
 }
-
 
 export default ProductCard;

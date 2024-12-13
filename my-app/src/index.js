@@ -25,7 +25,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<> <LogoFrame /> <ProductCard /> <Content /></>} />
-        <Route path="/catalog" element={<><ProductCard /><Filter /></>} />
+        <Route path="/catalog" element={<><ProductCard showCategoryName={false} showSeeMore={false} /><Filter /></>} />
         <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
         {/* <Route path='*' element={<NotFoundPage />} /> */} 
@@ -33,7 +33,7 @@ function App() {
         <Route path="/registor" element={<> <Registor /> </>}  />
         <Route path="/Resetpass" element={<ResetPass />} /> 
         <Route path="/NewPass" element={<NewPass />} />   
-        <Route path="/UserInfo" element={<> <UserInfo /> <ProductCard /> <Filter /> </> }/>
+        <Route path="/UserInfo" element={<> <UserInfo /> <ProductCard showCategoryName={false} showSeeMore={false} /> <Filter /> </> }/>
         <Route path='/ProductForm' element={<AddProduct />}/>
       </Routes>
 

@@ -117,12 +117,14 @@ function ShoppingTable() {
           >
             My product
           </button>
+          {/* <Link to='/ProductForm'> */}
           <button
             className={`shopping-table__tab ${activeTab === 'add-product' ? 'active' : ''}`}
             onClick={() => setActiveTab('add-product')}
           >
             Add product
           </button>
+          {/* </Link> */}
         </div>
 
         {renderTableContent()}
