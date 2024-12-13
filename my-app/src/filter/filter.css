@@ -1,11 +1,11 @@
 /* Контейнер фильтра */
-.filter-container {
+/*.filter-container {
   top: 177px;
   left: 20px;
   position: fixed;
 }
 
-/* Заголовок фильтра */
+
 .filter-header {
   display: flex;
   align-items: center;
@@ -18,7 +18,6 @@
   margin-right: 10px;
 }
 
-/* Элементы фильтра */
 .filter-item {
   display: flex;
   justify-content: space-between;
@@ -33,4 +32,4 @@
 .filter-item .check-icon {
   color: red;
   font-size: 16px;
-}
+}*/
