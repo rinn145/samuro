@@ -30,16 +30,13 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
         {/* <Route path='*' element={<NotFoundPage />} /> */} 
-        <Route path="/product/:id" element={<ProductDetailsWrapper />} />
+        <Route path="/product/:id" element={<ProductDetailsWrapper />} /> 
         <Route path="/registor" element={<> <Registor /> </>}  />
         <Route path="/Resetpass" element={<ResetPass />} /> 
         <Route path="/NewPass" element={<NewPass />} />   
         <Route path="/UserInfo" element={<> <UserInfo /> <ProductCard showCategoryName={false} showSeeMore={false} /> </> }/>
         <Route path='/ProductForm' element={<AddProduct />}/>
-        <Route path="/category/:categoryId" element={<CategoryPage />} />
-
-      </Routes>
-
+        <Route path="/category/:categoryId" element={ <CategoryPage> <ProductDetailsWrapper /> </CategoryPage> } /> </Routes>
       <Footer />
     </BrowserRouter>
   );

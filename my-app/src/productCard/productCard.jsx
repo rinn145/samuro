@@ -4,7 +4,7 @@ import '../productCard/productCard.css';
 import '../assets/fonts.css';
 import tgCard from '../tgCard.svg';
 
-function ProductCard({ showCategoryName = true, showSeeMore = true }) {
+function ProductCard({ }) {
 
   const categories = [
     {

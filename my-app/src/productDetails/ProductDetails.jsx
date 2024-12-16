@@ -5,7 +5,7 @@ import '../assets/fonts.css';
 import tgCard from '../tgCard.svg';
 
 function ProductDetails() {
-  const { id } = useParams();
+  const { categoryId } = useParams();
 
   // Продукты
   const products = [
@@ -27,9 +27,15 @@ function ProductDetails() {
   ];
 
   // Найти продукт по ID
-  const product = products.find((p) => p.id === parseInt(id));
-  if (!product) {
-    return <h2>Product not found</h2>;
+
+
+    const categoryProducts = products.filter(
+      (product) => product.categoryId === categoryId
+    );
+  
+    // Если нет продуктов в категории
+    if (categoryProducts.length === 0) {
+      return <h2>No products found in this category</h2>;
   }
 
   const [comments, setComments] = useState([]);
@@ -76,7 +82,7 @@ function ProductDetails() {
       <div className="product-details">
         <div className="left-section">
           <img src={tgCard} alt={product.name} className="product-image-pers" />
-          <h2>{product.name}</h2>
+          <h2>{categoryId.name}</h2>
           <div className="rating-section">
             {[1, 2, 3, 4, 5].map((star) => (
               <span
@@ -88,7 +94,7 @@ function ProductDetails() {
               </span>
             ))}
           </div>
-          <p className='right-section-p'>{product.description}</p>
+          <p className='right-section-p'>{categoryId.description}</p>
           <button className="buy-button">Buy</button>
         </div>
 
