@@ -17,6 +17,7 @@ import ResetPass from './resetpass/Resetpass';
 import NewPass from './resetpass/newpass';
 import UserInfo from './userInfo/userInfo';
 import AddProduct from './account/ProductForm'
+import CategoryPage from './productCard/category';
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
         <Route path="/NewPass" element={<NewPass />} />   
         <Route path="/UserInfo" element={<> <UserInfo /> <ProductCard showCategoryName={false} showSeeMore={false} /> </> }/>
         <Route path='/ProductForm' element={<AddProduct />}/>
+        <Route path="/category/:categoryId" element={<CategoryPage />} />
+
       </Routes>
 
       <Footer />

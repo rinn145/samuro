@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../productCard/productCard.css';
-import '../assets/fonts.css';
+import { useParams } from 'react-router-dom';
+import ProductCard from '../productCard/productCard.css';
 import tgCard from '../tgCard.svg';
 
-function ProductCard({ showCategoryName = true, showSeeMore = true }) {
+function CategoryPage() {
+  const { categoryId } = useParams();
 
+  // Данные категорий (их лучше передавать через API или Context)
   const categories = [
     {
       id: 1,
@@ -42,24 +43,23 @@ function ProductCard({ showCategoryName = true, showSeeMore = true }) {
     }
   ]
 
+  const category = categories.find(cat => cat.id === parseInt(categoryId));
 
-
-
- 
   return (
-    <div className="category-grid">
-      {categories.map((category) => (
-        <Link
-          key={category.id}
-          to={`/category/${category.id}`}
-          className="category-card"
-        >
-          <img src={tgCard} alt={category.name} className="category-image" />
-          <h3>{category.name}</h3>
-        </Link>
-      ))}
+    <div>
+      <h1>{category?.name || "Category not found"}</h1>
+      <div className="product-grid">
+        {category?.products.map((product) => (
+          <div key={product.id} className="product-card">
+            <img src={tgCard} alt={category.name} className="category-image" />
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <div className="product-price">{product.price}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-export default ProductCard;
+export default CategoryPage;
