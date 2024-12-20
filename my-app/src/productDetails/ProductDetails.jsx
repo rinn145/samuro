@@ -58,6 +58,8 @@ function ProductDetails() {
   const [currentChat, setCurrentChat] = useState("Support");
   const [messageInput, setMessageInput] = useState("");
 
+  
+
   const handleSendMessage = () => {
     if (messageInput.trim()) {
       setChats((prevChats) => ({
@@ -125,8 +127,18 @@ function ProductDetails() {
             </div>
           </div>
           <div className="chat-footer">
-            <input type="text" placeholder="Message" />
-          </div>
+          <input 
+            type="text" 
+            placeholder="Message" 
+            value={messageInput} 
+            onChange={(e) => setMessageInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleSendMessage();
+              }
+            }}
+          />
+        </div>
         </div>
       </div>
       </div>
