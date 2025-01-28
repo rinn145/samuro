@@ -10,13 +10,13 @@ import Content from './content/content';
 import ProductCard from './productCard/productCard';
 import Chat from './chat/chat';
 import Account from './account/Account';
-// import Filter from './filter/filter';
 import ProductDetailsWrapper from './productDetails/ProductDetails';
 import Registor from './registor/registor';
 import ResetPass from './resetpass/Resetpass';
 import NewPass from './resetpass/newpass';
 import UserInfo from './userInfo/userInfo';
 import AddProduct from './account/ProductForm'
+import NotFound from "./notFound/notFound";
 
 
 function App() {
@@ -28,10 +28,10 @@ function App() {
         <Route path="/catalog" element={<><ProductCard showCategoryName={false} showSeeMore={false} /> </>} />
         <Route path="/account" element={<Account />} />
         <Route path="/chat" element={<Chat />} />
-        {/* <Route path='*' element={<NotFoundPage />} /> */} 
+         <Route path='*' element={<NotFound />} />
         <Route path="/product/:id" element={<ProductDetailsWrapper />} />
-        <Route path="/registor" element={<> <Registor /> </>}  />
-        <Route path="/Resetpass" element={<ResetPass />} /> 
+        <Route path="/registor" element={<Registor />}  />
+        <Route path="/Resetpass" element={<ResetPass />} />
         <Route path="/NewPass" element={<NewPass />} />   
         <Route path="/UserInfo" element={<> <UserInfo /> <ProductCard showCategoryName={false} showSeeMore={false} /> </> }/>
         <Route path='/ProductForm' element={<AddProduct />}/>
@@ -42,6 +42,6 @@ function App() {
   );
 }
 
-const root = createRoot(document.getElementById('root')); // Новый метод
+const root = createRoot(document.getElementById('root'));
 root.render(<App />);
 

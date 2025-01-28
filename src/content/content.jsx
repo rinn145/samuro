@@ -10,13 +10,12 @@ function Content() {
       <div className="samuro-studio-content">
         <h1>SAMURO STUDIO</h1>
         <p>Do you want to sell your programs with us?</p>
-        <button className="join-button">
-          {/* Используем Link для навигации на страницу регистрации */}
-          <Link to="/registor" className="nav-link-a">
+        <Link to="/registor" className="nav-link-a">
+          <button className="join-button">
             Join us
-          </Link>
-        </button>
-      </div>
+          </button>
+        </Link>
+    </div>
       <div className="samuro-studio-image">
         <img src={SamuraiFooter} alt="Samurai" />
       </div>

@@ -1,0 +1,21 @@
+.logo-frame{
+    display: flex;
+    align-items: center;
+}
+
+.logo-title{
+    font-family: DEATHBLOOD;
+    color: #CF1919;
+    font-size: 96px;
+}
+
+.logo-subtitle{
+    max-width: 580px;
+    font-family: Inria Sans;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.logo-textsec{
+    margin-left: 40px;
+}

@@ -1,9 +1,10 @@
 body {
   margin: 0 auto;
-  /* Центрирование */
   padding: 0 160px;
-  /* Фиксированные отступы по бокам */
   max-width: 1600px;
+  background-image: url("backgroundTree.svg");
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 div {

@@ -1,0 +1,25 @@
+.error-content{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-right{
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-title{
+    font-family: "DEATHBLOOD";
+    font-size: 128px;
+    color: #CF1919;
+}
+
+.error-subtitle{
+    font-family: "Inria Sans";
+    font-size: 32px;
+    font-weight: 700;
+}
