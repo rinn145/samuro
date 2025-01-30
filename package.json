@@ -1,7 +1,9 @@
 {
-  "name": "my-app",
+  "name": "samuro",
   "version": "0.1.0",
   "dependencies": {
+    "expres": "^0.0.5",
+    "express": "^4.21.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
